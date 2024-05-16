@@ -1,14 +1,13 @@
-﻿class kursBlad {
+﻿class courseSelect {
     constructor(setup) {
         this.data = {}
 
     }
 
     init() {
-        this.data["courses"] = this.load()
     }
 
-    load(setup) {
+    fetchCourses(setup) {
 
         let apiUrl = 'https://api.skolverket.se/syllabus/v1/subjects?schooltype=GY&timespan=FUTURE&typeOfSyllabus=GRADE_SUBJECT_SYLLABUS';
         let courseList = []
@@ -35,6 +34,14 @@
                 
             }
         })
-        return courseList
+        this.data["courses"] = courseList
     }
+
+    loadCourses(setup, data) {
+        this.data["courses"] = data
+    }
+
+    loadPrograms(setup, data) {
+        this.data["programs"] = data
+    }       
 }

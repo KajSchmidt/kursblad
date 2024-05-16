@@ -10,8 +10,12 @@
     </head>
     <body>
         <script src="script.js"></script>
+        <script src="cached_courses.js"></script>
+        <script src="cached_programs.js"></script>
         <script>
-            const kurser = new kursBlad()
+            const kurser = new courseSelect()
+            kurser.loadCourses({}, cached_courses)
+            kurser.loadPrograms({}, cached_programs)
             kurser.init()
         </script>
     </body>
