@@ -60,24 +60,60 @@
         let program = this.data["programs"].find(p => p["program_code"] == program_code)
         this.layout["program_name"].innerText = program["program_name"]
 
-        for (let course of program["g_common_courses"]) {
+        for (let course_code of program["g_common_courses"]) {
+            let course = this.getCourse(course_code)
+            
             let courseCard = document.createElement("div")
             courseCard.classList.add("course__card")
-            courseCard.innerText = this.getCourse(course)["subject_name"]
+
+            let courseCardHeader = document.createElement("span")
+            courseCardHeader.classList.add("course__cardheader")
+            courseCardHeader.innerText= course["subject_name"]
+
+            let courseCardFooter = document.createElement("span")
+            courseCardFooter.classList.add("course__cardfooter")
+            courseCardFooter.innerText= course["course_name"]
+            
+            courseCard.append(courseCardHeader)
+            courseCard.append(courseCardFooter)
             this.layout["g_common"].append(courseCard)
         }
 
-        for (let course of program["p_common_courses"]) {
+        for (let course_code of program["p_common_courses"]) {
+            let course = this.getCourse(course_code)
+            
             let courseCard = document.createElement("div")
             courseCard.classList.add("course__card")
-            courseCard.innerText = this.getCourse(course)["subject_name"]
+
+            let courseCardHeader = document.createElement("span")
+            courseCardHeader.classList.add("course__cardheader")
+            courseCardHeader.innerText= course["subject_name"]
+
+            let courseCardFooter = document.createElement("span")
+            courseCardFooter.classList.add("course__cardfooter")
+            courseCardFooter.innerText= course["course_name"]
+            
+            courseCard.append(courseCardHeader)
+            courseCard.append(courseCardFooter)
             this.layout["p_common"].append(courseCard)
         }
 
-        for (let course of program["s_common_courses"]) {
+        for (let course_code of program["s_common_courses"]) {
+            let course = this.getCourse(course_code)
+            
             let courseCard = document.createElement("div")
             courseCard.classList.add("course__card")
-            courseCard.innerText = this.getCourse(course)["subject_name"]
+
+            let courseCardHeader = document.createElement("span")
+            courseCardHeader.classList.add("course__cardheader")
+            courseCardHeader.innerText= course["subject_name"]
+
+            let courseCardFooter = document.createElement("span")
+            courseCardFooter.classList.add("course__cardfooter")
+            courseCardFooter.innerText= course["course_name"]
+            
+            courseCard.append(courseCardHeader)
+            courseCard.append(courseCardFooter)
             this.layout["s_common"].append(courseCard)
         }
     }

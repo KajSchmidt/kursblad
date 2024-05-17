@@ -11,7 +11,7 @@
             }
 
             .program__header {
-                font-size: 2em;
+
             }
 
             .program__container {
@@ -26,7 +26,7 @@
             }
 
             .bucket__header {
-                font-size: 1.2em;
+
             }
 
             .bucket__container {
@@ -37,38 +37,51 @@
             .course__card {
                 border: 1px solid #adadad;
                 width: 300px;
-                height: 30px;
+                height: 50px;
                 margin: 2px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                align-content: center;
+            }
+
+            .course__cardheader {
+                text-align: center;
+                font-weight: bold;
+            }
+
+            .course__cardfooter {
+                text-align: center;
             }
         </style>
     </head>
     <body>
         <div class="program__wrapper">
-            <div class="program__header" id="program_name">Program</div>
+            <h1 class="program__header" id="program_name">Program</h1>
             <div class="program__container">
                 <div class="bucket__wrapper">
-                    <div class="bucket__header">Gymnasiegemensamma kurser</div>
+                    <h2 class="bucket__header">Gymnasiegemensamma kurser</h2>
                     <div class="bucket__container" id="g_common">
-                        
+
                     </div>
                 </div>
                 <div class="bucket__wrapper">
-                    <div class="bucket__header">Programgemensamma kurser</div>
+                    <h2 class="bucket__header">Programgemensamma kurser</h2>
                     <div class="bucket__container" id="p_common">
 
                     </div>
                 </div>
                 <div class="bucket__wrapper">
-                    <div class="bucket__header">Inriktningskurser</div>
+                    <h2 class="bucket__header">Inriktningskurser</h2>
                     <div class="bucket__container" id="s_common">
 
                     </div>
                 </div>
                 <div class="bucket__wrapper">
-                    <div class="bucket__header">Programfördjupning</div>
+                    <h2 class="bucket__header">Programfördjupning</h2>
                     <div class="bucket__container">
 
-                </div>
+                    </div>
                 </div>
             </div>
         </div>
