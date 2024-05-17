@@ -4,4 +4,5 @@
 
 [x] - API Call: kurslista
 [x] - API Call: Centralt innehåll
-[ ] - Poängplaner
+[x] - Poängplaner
+[ ] - Layout
