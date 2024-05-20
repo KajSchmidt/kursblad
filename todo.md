@@ -6,3 +6,6 @@
 [x] - API Call: Centralt innehåll
 [x] - Poängplaner
 [ ] - Layout
+[ ] - Programväljare
+[ ] - Drag and drop
+[ ] - Spara

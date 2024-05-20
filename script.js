@@ -7,6 +7,7 @@
         this.layout["g_common"] = document.querySelector("#g_common")
         this.layout["p_common"] = document.querySelector("#p_common")
         this.layout["s_common"] = document.querySelector("#s_common")
+        this.layout["e_courses"] = document.querySelector(".e_courses__container")
 
     }
 
@@ -62,59 +63,40 @@
 
         for (let course_code of program["g_common_courses"]) {
             let course = this.getCourse(course_code)
-            
-            let courseCard = document.createElement("div")
-            courseCard.classList.add("course__card")
-
-            let courseCardHeader = document.createElement("span")
-            courseCardHeader.classList.add("course__cardheader")
-            courseCardHeader.innerText= course["subject_name"]
-
-            let courseCardFooter = document.createElement("span")
-            courseCardFooter.classList.add("course__cardfooter")
-            courseCardFooter.innerText= course["course_name"]
-            
-            courseCard.append(courseCardHeader)
-            courseCard.append(courseCardFooter)
-            this.layout["g_common"].append(courseCard)
+            this.layout["g_common"].append(this.buildCourseCard(course))
         }
 
         for (let course_code of program["p_common_courses"]) {
             let course = this.getCourse(course_code)
-            
-            let courseCard = document.createElement("div")
-            courseCard.classList.add("course__card")
-
-            let courseCardHeader = document.createElement("span")
-            courseCardHeader.classList.add("course__cardheader")
-            courseCardHeader.innerText= course["subject_name"]
-
-            let courseCardFooter = document.createElement("span")
-            courseCardFooter.classList.add("course__cardfooter")
-            courseCardFooter.innerText= course["course_name"]
-            
-            courseCard.append(courseCardHeader)
-            courseCard.append(courseCardFooter)
-            this.layout["p_common"].append(courseCard)
+            this.layout["p_common"].append(this.buildCourseCard(course))
         }
 
         for (let course_code of program["s_common_courses"]) {
             let course = this.getCourse(course_code)
-            
-            let courseCard = document.createElement("div")
-            courseCard.classList.add("course__card")
-
-            let courseCardHeader = document.createElement("span")
-            courseCardHeader.classList.add("course__cardheader")
-            courseCardHeader.innerText= course["subject_name"]
-
-            let courseCardFooter = document.createElement("span")
-            courseCardFooter.classList.add("course__cardfooter")
-            courseCardFooter.innerText= course["course_name"]
-            
-            courseCard.append(courseCardHeader)
-            courseCard.append(courseCardFooter)
-            this.layout["s_common"].append(courseCard)
+            this.layout["s_common"].append(this.buildCourseCard(course))
         }
+
+        for (let course_code of program["electable_courses"]) {
+            let course = this.getCourse(course_code)
+            this.layout["e_courses"].append(this.buildCourseCard(course))
+        }
+    }
+
+    buildCourseCard(course) {
+        let courseCard = document.createElement("div")
+        courseCard.classList.add("course__card")
+
+        let courseCardHeader = document.createElement("span")
+        courseCardHeader.classList.add("course__cardheader")
+        courseCardHeader.innerText= course["subject_name"]
+
+        let courseCardFooter = document.createElement("span")
+        courseCardFooter.classList.add("course__cardfooter")
+        courseCardFooter.innerText= course["course_name"]
+        
+        courseCard.append(courseCardHeader)
+        courseCard.append(courseCardFooter)
+
+        return courseCard
     }
 }
